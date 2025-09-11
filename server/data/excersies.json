@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Jogging",
+    "sets": 1,
+    "reps": 1,
+    "durationMinutes": 30,
+    "tags": ["lose_weight", "endurance"]
+  },
+  {
+    "name": "HIIT Circuit",
+    "sets": 5,
+    "reps": 10,
+    "durationMinutes": 20,
+    "tags": ["lose_weight", "endurance", "fast"]
+  },
+  {
+    "name": "Bench Press",
+    "sets": 4,
+    "reps": 8,
+    "durationMinutes": 15,
+    "tags": ["build_muscle", "gain_weight"]
+  },
+  {
+    "name": "Deadlifts",
+    "sets": 4,
+    "reps": 6,
+    "durationMinutes": 20,
+    "tags": ["build_muscle", "gain_weight"]
+  },
+  {
+    "name": "Cycling",
+    "sets": 1,
+    "reps": 1,
+    "durationMinutes": 45,
+    "tags": ["lose_weight", "endurance", "maintain"]
+  },
+  {
+    "name": "Push-ups",
+    "sets": 3,
+    "reps": 15,
+    "durationMinutes": 10,
+    "tags": ["maintain", "build_muscle"]
+  },
+  {
+    "name": "Yoga",
+    "sets": 1,
+    "reps": 1,
+    "durationMinutes": 40,
+    "tags": ["maintain", "endurance", "slow"]
+  },
+  {
+    "name": "Squats",
+    "sets": 4,
+    "reps": 12,
+    "durationMinutes": 15,
+    "tags": ["build_muscle", "gain_weight", "maintain"]
+  },
+  {
+    "name": "Jump Rope",
+    "sets": 3,
+    "reps": 2,
+    "durationMinutes": 15,
+    "tags": ["lose_weight", "fast"]
+  },
+  {
+    "name": "Plank",
+    "sets": 3,
+    "reps": 1,
+    "durationMinutes": 3,
+    "tags": ["maintain", "build_muscle"]
+  }
+]

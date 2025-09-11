@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Grilled Chicken Salad",
+    "calories": 350,
+    "protein": 40,
+    "carbs": 20,
+    "fats": 10,
+    "tags": ["lose_weight", "maintain"]
+  },
+  {
+    "name": "Oatmeal with Berries",
+    "calories": 300,
+    "protein": 10,
+    "carbs": 55,
+    "fats": 5,
+    "tags": ["lose_weight", "endurance", "slow"]
+  },
+  {
+    "name": "Salmon with Quinoa",
+    "calories": 500,
+    "protein": 45,
+    "carbs": 35,
+    "fats": 20,
+    "tags": ["build_muscle", "maintain"]
+  },
+  {
+    "name": "Steak and Sweet Potatoes",
+    "calories": 650,
+    "protein": 55,
+    "carbs": 50,
+    "fats": 25,
+    "tags": ["gain_weight", "build_muscle", "fast"]
+  },
+  {
+    "name": "Protein Shake with Banana",
+    "calories": 400,
+    "protein": 35,
+    "carbs": 40,
+    "fats": 5,
+    "tags": ["gain_weight", "build_muscle", "endurance"]
+  },
+  {
+    "name": "Vegetable Stir Fry with Tofu",
+    "calories": 350,
+    "protein": 20,
+    "carbs": 45,
+    "fats": 12,
+    "tags": ["lose_weight", "maintain"]
+  },
+  {
+    "name": "Egg Omelette with Whole Grain Toast",
+    "calories": 320,
+    "protein": 25,
+    "carbs": 25,
+    "fats": 12,
+    "tags": ["maintain", "build_muscle"]
+  },
+  {
+    "name": "Brown Rice with Lentils",
+    "calories": 450,
+    "protein": 20,
+    "carbs": 70,
+    "fats": 8,
+    "tags": ["endurance", "gain_weight", "slow"]
+  },
+  {
+    "name": "Greek Yogurt with Nuts",
+    "calories": 280,
+    "protein": 18,
+    "carbs": 15,
+    "fats": 12,
+    "tags": ["lose_weight", "maintain", "slow"]
+  },
+  {
+    "name": "Pasta with Chicken Breast",
+    "calories": 550,
+    "protein": 45,
+    "carbs": 65,
+    "fats": 15,
+    "tags": ["gain_weight", "build_muscle", "normal"]
+  }
+]
