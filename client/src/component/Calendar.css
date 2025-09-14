@@ -1,0 +1,164 @@
+.calendar-wrapper.small {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: #e6e6e6;
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(183, 117, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px;
+  box-sizing: border-box;
+
+  /* reserve enough vertical space so the wrapper does not change size when skeleton replaced */
+  min-height: 340px;
+}
+
+/* Header unchanged */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: #e6e6e6;
+}
+
+.calendar-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #b675ff;
+}
+
+.calendar-header button {
+  padding: 4px 8px;
+  background: rgba(183, 117, 255, 0.1);
+  border: 1px solid rgba(183, 117, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #e6e6e6;
+  transition: all 0.2s ease;
+}
+
+.calendar-header button:hover {
+  background: rgba(183, 117, 255, 0.2);
+  border-color: rgba(183, 117, 255, 0.5);
+}
+
+/* body keeps reserved height */
+.calendar-body {
+  /* 6 rows x 40px each ≈ 240px plus some spacing — align with min-height above */
+  min-height: 260px;
+  display: block;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* table basics */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  /* base opacity then controlled via wrapper classes for a smooth swap */
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+/* ensure both skeleton & real table are visible depending on wrapper state */
+.calendar-wrapper.loaded .calendar-table,
+.calendar-wrapper.skeleton-mode .calendar-table {
+  opacity: 1;
+}
+
+.calendar-table th {
+  padding: 4px 0;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #b675ff;
+}
+
+/* enforce fixed row height so nothing resizes */
+.calendar-table tbody tr {
+  height: 40px;
+}
+
+.calendar-table td {
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid rgba(183, 117, 255, 0.15);
+  color: #e6e6e6;
+  transition: background 0.2s ease;
+  padding: 0; /* keep consistent cell height */
+}
+
+.calendar-table td:hover {
+  background: rgba(183, 117, 255, 0.05);
+}
+
+.date-number {
+  font-weight: bold;
+  color: #e6e6e6;
+}
+
+/* Completed / missed / today */
+.cell-completed {
+  background: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.cell-missed {
+  background: #e53935;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.cell-today {
+  border: 2px solid rgba(183, 117, 255, 0.8);
+  border-radius: 6px;
+}
+
+/* Skeleton styling */
+.skeleton-line,
+.skeleton-btn.small,
+.calendar-skeleton-cell {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(183, 117, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-line {
+  height: 12px;
+}
+.skeleton-line.tiny {
+  height: 8px;
+}
+.skeleton-line.title {
+  width: 100px;
+  height: 14px;
+}
+
+.skeleton-btn.small {
+  width: 30px;
+  height: 20px;
+}
+
+/* make skeleton cells match real cells */
+.calendar-skeleton-cell {
+  height: 36px; /* slightly smaller than date row to look like placeholder */
+  margin: 4px auto;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

@@ -1,0 +1,158 @@
+.progress-tracker-container {
+  max-width: 950px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.streak-box,
+.coins-box {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.streak-box h3,
+.coins-box h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.streak-box p,
+.coins-box p {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+/* Coin Wallet specific styles */
+.coins-box.clickable {
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.5);
+}
+
+.coins-box.clickable:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(255, 193, 7, 0.7);
+}
+
+.coins-box.clickable p {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+/* Calendar styling */
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  overflow-x: auto;
+  align-items: center; /* center content */
+}
+
+.year-label {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.months-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center; /* center months horizontally */
+}
+
+.month-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.month-label {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+.month-days {
+  display: flex;
+  gap: 4px;
+}
+
+.month-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.day-cell {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.day-cell:hover {
+  transform: scale(1.4);
+}
+
+/* Tooltip for each day */
+.day-cell[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #222;
+  color: #fff;
+  padding: 3px 6px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  transform: translate(-50%, -150%);
+  z-index: 10;
+}
+
+/* Current Streak specific styles */
+.streak-box.clickable {
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.streak-box.clickable:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.streak-box.clickable p {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #e0eaff;
+}
+
+.streak-box.clickable h3 {
+  color: #dbeafe;
+}
+
+.streak-box.clickable h4 {
+  color: #cbd5e1;
+}

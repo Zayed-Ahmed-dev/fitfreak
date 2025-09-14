@@ -10,12 +10,16 @@ const planSchema = new mongoose.Schema(
     },
     goal: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Goal',
+      ref: 'Goal',  
       required: true,
     },
     weekNumber: {
-      type: Number, // useful if you want to track week-wise separately
+      type: Number,
       default: 1,
+    },
+    startDate: {
+      type: Date,
+      default: Date.now, // <-- add this
     },
     dailyPlans: [
       {
@@ -32,6 +36,8 @@ const planSchema = new mongoose.Schema(
             sets: Number,
             reps: Number,
             durationMinutes: Number,
+            image: String,
+            done: { type: Boolean, default: false },
           },
         ],
         meals: [
@@ -41,8 +47,11 @@ const planSchema = new mongoose.Schema(
             protein: Number,
             carbs: Number,
             fats: Number,
+            image: String,
+            taken: { type: Boolean, default: false },
           },
         ],
+        isRestDay: { type: Boolean, default: false }, // optional
       },
     ],
   },

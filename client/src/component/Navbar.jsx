@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { FaHome, FaBullseye, FaClipboardList, FaChartLine, FaUsers, FaUser, FaSignOutAlt, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -7,26 +8,34 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">FitnessApp</div>
+      <div className="navbar-logo">FitFlex</div>
+      
       <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
+        <li><Link to="/" title="Home"><FaHome /></Link></li>
         {user && (
           <>
-            <li><Link to="/goals">Goals</Link></li>
-            <li><Link to="/plans">Plans</Link></li>
-            <li><Link to="/progress">Progress</Link></li>
-            <li><Link to="/community">Community</Link></li>
-            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/goals" title="Goals"><FaBullseye /></Link></li>
+            <li><Link to="/plans" title="Plans"><FaClipboardList /></Link></li>
+            <li><Link to="/progress" title="Progress"><FaChartLine /></Link></li>
+            <li><Link to="/community" title="Community"><FaUsers /></Link></li>
+            <li><Link to="/profile" title="Profile"><FaUser /></Link></li>
           </>
         )}
       </ul>
+
       <div className="navbar-auth">
         {user ? (
-          <button className="logout-btn" onClick={logout}>Logout</button>
+          <button className="logout-btn" onClick={logout} title="Logout">
+            <FaSignOutAlt />
+          </button>
         ) : (
           <>
-            <Link className="login-btn" to="/login">Login</Link>
-            <Link className="register-btn" to="/register">Register</Link>
+            <Link className="login-btn" to="/login" title="Login">
+              <FaSignInAlt />
+            </Link>
+            <Link className="register-btn" to="/register" title="Register">
+              <FaUserPlus />
+            </Link>
           </>
         )}
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // ✅ Import Link
 import { useAuth } from "../context/AuthContext";
 import "./Register.css";
 
@@ -12,14 +12,14 @@ export default function Register() {
     gender: "",
     height: "",
     currentWeight: "",
-    activityLevel: "",
+    // activityLevel removed ✅
   });
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  const { login } = useAuth(); // from AuthContext
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -43,10 +43,7 @@ export default function Register() {
         throw new Error(data.message || "Registration failed");
       }
 
-      // Save user + token to context
       login({ ...data.user, token: data.token });
-
-      // Redirect to goals or home page
       navigate("/goals");
     } catch (err) {
       setError(err.message);
@@ -117,22 +114,20 @@ export default function Register() {
           onChange={handleChange}
         />
 
-        <select
-          name="activityLevel"
-          value={formData.activityLevel}
-          onChange={handleChange}
-        >
-          <option value="">Activity Level</option>
-          <option value="sedentary">Sedentary</option>
-          <option value="light">Lightly Active</option>
-          <option value="moderate">Moderately Active</option>
-          <option value="active">Very Active</option>
-        </select>
+        {/* Removed Activity Level select ✅ */}
 
         <button type="submit" disabled={loading}>
           {loading ? "Registering..." : "Register"}
         </button>
       </form>
+
+      {/* ✅ New Login Link */}
+      <p className="login-redirect">
+        Already have an account?{" "}
+        <Link to="/login" className="login-link">
+          Login here
+        </Link>
+      </p>
     </div>
   );
 }

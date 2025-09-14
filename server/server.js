@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.use('/api/user', userRoutes); 
 
 // Goal routes
-app.use('/api/goal', goalRoutes)
+app.use('/api/goals', goalRoutes)
 
 //Plan routes
 app.use('/api/plan', planRoutes)

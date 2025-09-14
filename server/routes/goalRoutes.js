@@ -103,8 +103,14 @@ router.delete('/:id', authMiddleware, async (req, res) => {
       return res.status(403).json({ message: 'Not authorized' });
     }
 
+    // ✅ Delete all plans linked to this goal before deleting goal
+    const Plan = require('../models/Plan');
+    const result = await Plan.deleteMany({ goal: goal._id });
+    console.log(`🗑️ Deleted ${result.deletedCount} plan(s) for goal ${goal._id}`);
+
     await goal.deleteOne();
-    res.json({ message: 'Goal deleted' });
+
+    res.json({ message: 'Goal and associated plans deleted' });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error' });

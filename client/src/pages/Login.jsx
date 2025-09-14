@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import axios from "axios";
 import "./Login.css";
 
 export default function Login() {
@@ -15,8 +16,15 @@ export default function Login() {
     setError("");
 
     try {
-      await login(email, password); // ✅ Calls AuthContext login function
-      navigate("/"); // Redirect to home after login
+      const res = await axios.post("http://localhost:8000/api/user/login", {
+        email,
+        password,
+      });
+
+      // ✅ Save token + user in context
+      login({ token: res.data.token, user: res.data.user });
+
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }

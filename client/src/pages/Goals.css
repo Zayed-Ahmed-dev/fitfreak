@@ -1,0 +1,219 @@
+/* --- CONTAINER --- */
+.goals-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* --- TITLE --- */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #b675ff; /* purple */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* --- EMPTY STATE (Glassy) --- */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(15px) saturate(160%);
+  border: 1px solid rgba(183, 117, 255, 0.25);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.45);
+  animation: fadeIn 0.5s ease;
+  color: #e0cfff;
+}
+
+/* --- BUTTONS --- */
+.primary-btn,
+.plan-btn {
+  background: linear-gradient(135deg, #7d2eff, #a35eff);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover,
+.plan-btn:hover {
+  background: linear-gradient(135deg, #a35eff, #7d2eff);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(157, 78, 221, 0.5);
+}
+
+/* --- FORM --- */
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(30, 30, 30, 0.6);
+  padding: 1.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px) saturate(160%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+.goal-form input,
+.goal-form select {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(50, 50, 50, 0.6);
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.goal-form input:focus,
+.goal-form select:focus {
+  outline: 2px solid #b675ff;
+  background: rgba(60, 20, 80, 0.6);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* --- CANCEL BUTTON --- */
+.cancel-btn {
+  background: rgba(50, 50, 50, 0.5);
+  color: #b675ff;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid rgba(183, 117, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: rgba(70, 30, 100, 0.6);
+}
+
+/* --- GOAL LIST --- */
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.goal-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid rgba(183, 117, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  color: #e0cfff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease;
+}
+
+.goal-card:hover {
+  transform: scale(1.02);
+}
+
+.goal-left {
+  text-align: left;
+}
+
+.goal-left h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: #b675ff; /* purple */
+}
+
+.goal-left p {
+  margin: 2px 0;
+  font-size: 0.95rem;
+}
+
+.goal-right {
+  text-align: right;
+}
+
+.delete-btn {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+/* --- ADD MORE GOAL BUTTON --- */
+.add-goal-btn {
+  background: rgba(157, 78, 221, 0.15);
+  border: 2px dashed #b675ff;
+  color: #b675ff;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-goal-btn:hover {
+  background: rgba(157, 78, 221, 0.25);
+  transform: scale(1.05);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- SELECT STYLING --- */
+.goal-form select {
+  appearance: none; /* Removes default browser arrow styling */
+  background: rgba(30, 30, 30, 0.6);
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(183, 117, 255, 0.2);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.goal-form select:hover {
+  background: rgba(40, 40, 40, 0.7);
+}
+
+.goal-form select:focus {
+  outline: 2px solid #b675ff;
+  background: rgba(60, 20, 80, 0.6);
+}
+
+/* Style the dropdown options */
+.goal-form select option {
+  background-color: #1e1e1e; /* solid dark background */
+  color: #ffffff; /* make text readable */
+  font-weight: 500;
+  padding: 0.5rem;
+}
